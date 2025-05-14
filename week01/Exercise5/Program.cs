@@ -2,8 +2,60 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Console.WriteLine("Hello World! This is the Exercise5 Project.");
+        DisplayWelcome();
+
+        string userName = PromptUserName();
+        int favoriteNumber = PromptUserNumber();
+        int squaredNumber = SquareNumber(favoriteNumber);
+
+        DisplayResult(userName, squaredNumber);
+    }
+
+    static void DisplayWelcome()
+    {
+        Console.WriteLine("Welcome to the program!");
+    }
+
+    static string PromptUserName()
+    {
+        Console.Write("Please enter your name: ");
+        return Console.ReadLine();
+    }
+
+    static int PromptUserNumber()
+    {
+        int number;
+        bool isValid = false;
+
+        do
+        {
+            Console.Write("Please enter your favorite number: ");
+            string input = Console.ReadLine();
+
+            // Try to parse the input; if it fails, loop again
+            if (int.TryParse(input, out number))
+            {
+                isValid = true;
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a valid integer.");
+            }
+
+        } while (!isValid);
+
+        return number;
+    }
+
+    static int SquareNumber(int number)
+    {
+        return number * number;
+    }
+
+    static void DisplayResult(string name, int squared)
+    {
+        Console.WriteLine($"{name}, the square of your number is {squared}");
     }
 }
