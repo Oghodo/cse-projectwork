@@ -50,7 +50,7 @@ class SimpleGoal : Goal
     public override string GetStringRepresentation() => $"SimpleGoal|{_name}|{_description}|{_points}|{_isComplete}";
 }
 
-class EternalGoal : Goal
+oal|{_name}|{_class EternalGoal : Goal
 {
     public EternalGoal(string name, string description, int points)
         : base(name, description, points) {}
@@ -58,7 +58,7 @@ class EternalGoal : Goal
     public override int RecordEvent() => _points;
     public override bool IsComplete() => false;
     public override string GetStatus() => "[∞] " + _name + " (" + _description + ")";
-    public override string GetStringRepresentation() => $"EternalGoal|{_name}|{_description}|{_points}";
+    public override string GetStringRepresentation() => $"EternalGdescription}|{_points}";
 }
 
 class ChecklistGoal : Goal
